@@ -29,7 +29,7 @@ before_script:
 # whitelist
 branches:
   only:
-    - dev
+    - dev-branch
 
 script:
     - date
