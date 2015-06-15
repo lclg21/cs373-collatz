@@ -29,9 +29,13 @@ def collatz_eval (i, j) :
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    
     array = []
+    arrayB = []
     if (i <= j):
+        assert(i <= j)
         while (i < j+1):
+            assert (i < j+1)
             n = i
             cycleLength  = 1
             while ( n != 1 ):
@@ -39,17 +43,23 @@ def collatz_eval (i, j) :
                     n = n / 2
                 else:
                     n = (3 * n) + 1 #if odd
-                    
+
                 cycleLength = cycleLength + 1
+                assert( cycleLength > 0)
             array.append(cycleLength)
             i = i + 1
-                    
+            assert(i > 0)
+
         array.sort()
         arrayLen = len(array)
         maxCycleLength = array[arrayLen - 1]
-    
-    elif (j > i):
+
+        return maxCycleLength
+
+    elif i > j:
+        assert (i > j)
         while (j < i+1):
+            assert(j < i+1)
             n = j
             cycleLength  = 1
             while ( n != 1 ):
@@ -57,16 +67,18 @@ def collatz_eval (i, j) :
                     n = n / 2
                 else:
                     n = (3 * n) + 1 #if odd
-
+                    
                 cycleLength = cycleLength + 1
-            array.append(cycleLength)
+                assert(cycleLength > 0)
+            arrayB.append(cycleLength)
             j = j + 1
+            assert(j > 0)
 
-        array.sort()
-        arrayLen = len(array)
-        maxCycleLength = array[arrayLen - 1]
-                
-    return maxCycleLength
+        arrayB.sort()
+        arrayBLen = len(arrayB)
+        maxCycleLength = arrayB[arrayBLen - 1]
+
+        return maxCycleLength
                 
 # -------------
 # collatz_print
