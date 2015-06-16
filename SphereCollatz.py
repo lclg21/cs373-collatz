@@ -31,56 +31,35 @@ def collatz_eval (i, j) :
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    maxLen = 0
+    if (i > j) :
+        assert i > j
+        temp = j
+        j = i
+        i = temp
 
-    array = []
-    arrayB = []
-    if (i <= j):
-        assert(i <= j)
-        while (i < j+1):
-            assert (i < j+1)
-            n = i
-            cycleLength  = 1
-            while ( n != 1 ):
-                if (n % 2 == 0): #if even
-                    n = n / 2
-                else:
-                    n = (3 * n) + 1 #if odd
+    while ( i < j + 1) :
+        assert i < j + 1
+        n = i
+        cycleLength = 1
+        while (n != 1) :
+            assert n > 1
+            if (n % 2 == 0) : #if even
+                n = n / 2
+            else :
+                n = (3 * n) + 1 #if odd
 
-                cycleLength = cycleLength + 1
-                assert( cycleLength > 0)
-            array.append(cycleLength)
-            i = i + 1
-            assert(i > 0)
+            cycleLength += 1
+            assert cycleLength > 0
+        i += 1
+        if  (maxLen < cycleLength) :
+            maxLen = cycleLength
 
-        array.sort()
-        arrayLen = len(array)
-        maxCycleLength = array[arrayLen - 1]
+    assert maxLen > 0
 
-        return maxCycleLength
+    return maxLen
 
-    elif i > j:
-        assert (i > j)
-        while (j < i+1):
-            assert(j < i+1)
-            n = j
-            cycleLength  = 1
-            while ( n != 1 ):
-                if (n % 2 == 0): #if even
-                    n = n / 2
-                else:
-                    n = (3 * n) + 1 #if odd
-
-                cycleLength = cycleLength + 1
-                assert(cycleLength > 0)
-            arrayB.append(cycleLength)
-            j = j + 1
-            assert(j > 0)
-
-        arrayB.sort()
-        arrayBLen = len(arrayB)
-        maxCycleLength = arrayB[arrayBLen - 1]
-
-        return maxCycleLength
+    
 
 # -------------
 # collatz_print
