@@ -97,7 +97,7 @@ def collatz_eval (i, j) :
             while (n != 1) :
                 assert n > 1
                 if (n % 2 == 0) : #if even
-                    n = n / 2
+                    n = n >> 1 #use right shit for faster performance
                 else :
                     n = (3 * n) + 1 #if odd
                 cycleLength += 1
