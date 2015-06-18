@@ -90,7 +90,6 @@ def collatz_eval (i, j) :
             #adds the value and its corresponding cycle length to the cache
             #if greater than 99550.
             if (i < 500):
-
                 cache.append((i, cycleLength))
                 
             if (maxLen < cycleLength) :
