@@ -19,8 +19,10 @@ def collatz_read (s) :
     a = s.split()
     return [int(a[0]), int(a[1])]
 
+
+
 # ----------------------
-# cache_helper_function
+# cache_helper_functions
 #-----------------------
 cache = []
 def isInCache(n):
@@ -28,7 +30,6 @@ def isInCache(n):
     c = 0
     inCache = False
     assert inCache == False
-
     for v, c in cache:
         if v == n:
             assert v == n
@@ -36,6 +37,7 @@ def isInCache(n):
             cycle = c
             break
     return (inCache, c)
+
 
 # ------------
 # collatz_eval
@@ -63,11 +65,11 @@ def collatz_eval (i, j) :
         inCacheValue, cache_cycle = isInCache(n)
         #checks to see if value is in cache
         if (inCacheValue == True) :
-            assert isInCache(n) == True
+            assert inCacheValue == True
             cycleLength = cache_cycle
             
             if (maxLen < cycleLength) :
-                assert maxLen > 0
+                assert maxLen < cycleLength
                 maxLen = cycleLength
 
         #if value is not in cache, it calculates the cyclelength
@@ -77,25 +79,27 @@ def collatz_eval (i, j) :
             while (n != 1) :
                 assert n > 1
                 if (n % 2 == 0) : #if even
-                    n = n >> 1    #use right shit for faster performance
+                    n = n >> 1 # use right shit for faster performance
+                    cycleLength += 1
                 else :
-                    n = ((3 * n) + 1) >> 1 #when odd it calculates the odd number and divides it by 2 in one step
-                cycleLength += 2
+                    n = ((3 * n) + 1) >> 1 #if odd
+                    cycleLength += 2
                 assert cycleLength > 0
 
-            if (i > 99550):
-                assert i > 99550
-                #adds the value and its corresponding cycle length to the cache
+            
+            #adds the value and its corresponding cycle length to the cache
+            #if greater than 99550.
+            if (i < 500):
+
                 cache.append((i, cycleLength))
                 
             if (maxLen < cycleLength) :
-                assert maxLen > 0
+                assert maxLen  < cycleLength
                 maxLen = cycleLength
         i += 1
 
     return maxLen
-        
-                
+
 # -------------
 # collatz_print
 # -------------
