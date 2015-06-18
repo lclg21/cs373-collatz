@@ -20,15 +20,18 @@ def collatz_read (s) :
     return [int(a[0]), int(a[1])]
 
 # ----------------------
-# cache_helper_functions
+# cache_helper_function
 #-----------------------
 cache = []
 def isInCache(n):
     cycle = 0
     c = 0
     inCache = False
+    assert inCache == False
+
     for v, c in cache:
         if v == n:
+            assert v == n
             inCache = True
             cycle = c
             break
@@ -76,11 +79,12 @@ def collatz_eval (i, j) :
                 if (n % 2 == 0) : #if even
                     n = n >> 1    #use right shit for faster performance
                 else :
-                    n = ((3 * n) + 1) >> 1 #if odd
+                    n = ((3 * n) + 1) >> 1 #when odd it calculates the odd number and divides it by 2 in one step
                 cycleLength += 2
                 assert cycleLength > 0
 
             if (i > 99550):
+                assert i > 99550
                 #adds the value and its corresponding cycle length to the cache
                 cache.append((i, cycleLength))
                 

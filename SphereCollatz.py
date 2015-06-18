@@ -26,30 +26,17 @@ def collatz_read (s) :
 #-----------------------
 cache = []
 def isInCache(n):
-    """
-    n is an int
-    returns true if value n is in the cache false otherwise
-    """
-    inCache = False
-    for list in cache:
-        if (list[0] == n ):
-            inCache = True
-            break
-        else:
-            inCache = False
-    return inCache
-
-def getCycleLength(n):
-    """
-    n is an int
-    returns the cycle length of n from the cache 
-    """
     cycle = 0
-    for list in cache:
-        if (list[0] == n ):
-            cycle = list[1]
+    c = 0
+    inCache = False
+    assert inCache == False
+    for v, c in cache:
+        if v == n:
+            assert v == n
+            inCache = True
+            cycle = c
             break
-    return cycle
+    return (inCache, c)
 
 
 # ------------
@@ -75,10 +62,11 @@ def collatz_eval (i, j) :
     while ( i < j + 1) :
         assert i < j + 1
         n = i
+        inCacheValue, cache_cycle = isInCache(n)
         #checks to see if value is in cache
-        if (isInCache(n) == True) :
+        if (inCacheValue == True) :
             assert isInCache(n) == True
-            cycleLength = getCycleLength(n)
+            cycleLength = cache_cycle
             
             if (maxLen < cycleLength) :
                 assert maxLen > 0
@@ -97,8 +85,14 @@ def collatz_eval (i, j) :
                     n = ((3 * n) + 1) >> 1 #if odd
                     cycleLength += 2
                 assert cycleLength > 0
+
+            
             #adds the value and its corresponding cycle length to the cache
-            cache.append((i, cycleLength))
+            #if greater than 99550.
+            if (i > 99550):
+                assert i > 99550
+                cache.append((i, cycleLength))
+                
             if (maxLen < cycleLength) :
                 assert maxLen > 0
                 maxLen = cycleLength
