@@ -1,0 +1,187 @@
+commit eb2fe924f6530c2aa0a5a5279d1a67129bdcf2e8
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 23:24:41 2015 -0500
+
+    added SphereCollatz to repo
+
+commit 186858e83c15625ab8cac1447e1befd53aac2734
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 23:14:43 2015 -0500
+
+    modified collatz.py
+
+commit b1d494b2e311ddfeec57d14d1b0124e246b58e03
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 23:11:12 2015 -0500
+
+    Fix the bug in collatz_solve
+
+commit 197b4038b0c9d26cffc86b9c76d6dfaf9903ba92
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 20:11:02 2015 -0500
+
+    deleting miscellaneous code added by accident
+
+commit 74c40be32caa3d3ef17ef5b4e017a235b96b7bf5
+Merge: cb06a09 ccd1c7f
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 20:05:23 2015 -0500
+
+    added assertions and more comments
+
+commit ccd1c7f29b64620af25ecc92eb0b8ed13dbad970
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 19:37:34 2015 -0500
+
+    modify the cache for faster performance
+
+commit cb06a095005691b41004badc26db1670ceff6545
+Merge: b9c53f2 12d25b1
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 19:19:20 2015 -0500
+
+    updated Collatz.py with lazy cache
+
+commit 12d25b12cb7840d252d813de7fa8fc7aa489dd20
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 19:10:24 2015 -0500
+
+    added a faster working cache
+
+commit b9c53f264a39a7e9f029270600cb7c1d8ad103b3
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 16:09:46 2015 -0500
+
+    made the cache faster but still not passing sphere
+
+commit 612746b003b5cdc3eda866cada3e3872fd4e767f
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Wed Jun 17 00:42:48 2015 -0500
+
+    modified sphereCollatz
+
+commit d24deb92d3cd1c31109d42b5445a17f700af6906
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jun 16 23:27:27 2015 -0500
+
+    rename the run/test files with my EID in the makefile
+
+commit ad198c085abcc47d34daa94d558db936fc98781f
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jun 16 23:18:35 2015 -0500
+
+    implemented a cache to collatz.py
+
+commit 2d206ab63522112c26fef53daf77de2664de39a8
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jun 16 18:40:25 2015 -0500
+
+    added 100 lines of acceptance tests to runcollatz .in and .out
+
+commit 30ef77538d373c95304b996d94f7a7429b6dec14
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jun 16 18:32:06 2015 -0500
+
+    modified collatz eval in SphereCollatz.py
+
+commit 319ebec8fa135d46952eb178cf2617ddbd854c5a
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jun 16 18:18:35 2015 -0500
+
+    made simple problem run faster without cache
+
+commit 798d14dd7599f8a5e335bad0eafa2807ca6ec96f
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Tue Jun 16 17:33:23 2015 -0500
+
+    wrote more tests in TestCollatz.py
+
+commit 99bee94c94985087bd8e237f4c9ec002bb405512
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 14:45:49 2015 -0500
+
+    implemented SphereColltaz.py
+
+commit 6c63e62999cfe002af510facef3bc97619053e29
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 14:26:54 2015 -0500
+
+    added an if statement for case j > i
+
+commit 2905f02030ad8db96f2e8329836d593b6f18d921
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 14:22:39 2015 -0500
+
+    Implemented collatz_solve
+
+commit 04ae8c102221fec90baf179a7c2470f787bb2365
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 13:37:44 2015 -0500
+
+    modified Collatz.py to solve 3n + 1
+
+commit fded3fb109cddd0a7f570725f476c262d17ff07e
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 10:06:31 2015 -0500
+
+    modified the .travis.yml file again
+
+commit 343885e65b0b24b17cc30b5af152e0f5a52f405d
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 09:37:05 2015 -0500
+
+    modified .coverage
+
+commit 73e83c538f396b274ac8d54983720756e937cfc0
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 09:22:10 2015 -0500
+
+    modified the yml file
+
+commit 4bce0763aed5c73e10caa6f96fa2904018d8c159
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 09:10:13 2015 -0500
+
+    modified the yml file to accept dev-branch
+
+commit 0c94f43f94ccbee17d27a8300301f31917cf989a
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 00:27:55 2015 -0500
+
+    Fixed the given unit tests to correct values
+
+commit 9fda0a9e028eefec23788d0eaff767fd4291bfb8
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 00:17:38 2015 -0500
+
+    ran first make test on dev-brach
+
+commit 5b218456d72f4474d20a9f45a2c013d58c6fbd99
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Mon Jun 15 00:05:42 2015 -0500
+
+    changed RunCollatz.py to an executable file
+
+commit 7aaa39d1be0fb29e2ee7f746355710dec4d6b4cd
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sun Jun 14 23:54:51 2015 -0500
+
+    deleted unnecessary yml file
+
+commit 2d6225f5a464ac7c62b076c5562c58cba5508ce5
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sun Jun 14 23:46:39 2015 -0500
+
+    modified the travis.yml file
+
+commit f8e3bff174e8fa1dfc17e9b49f8c8258156df437
+Author: Luis Lopez <lclg21@utexas.edu>
+Date:   Sun Jun 14 23:36:10 2015 -0500
+
+    first run of make test
+
+commit 0fb24dcca2e97ca80a80a253e036e97a1cfcc029
+Author: lclg21 <lclg21@utexas.edu>
+Date:   Sun Jun 14 22:54:36 2015 -0500
+
+    Initial commit
