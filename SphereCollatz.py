@@ -29,23 +29,15 @@ def isInCache(n):
     cycle = 0
     c = 0
     inCache = False
-<<<<<<< HEAD
-    for v, c in cache:
-        if v == n:
-=======
     assert inCache == False
     for v, c in cache:
         if v == n:
             assert v == n
->>>>>>> dev-branch
             inCache = True
             cycle = c
             break
     return (inCache, c)
-<<<<<<< HEAD
-=======
 
->>>>>>> dev-branch
 
 # ------------
 # collatz_eval
@@ -73,11 +65,7 @@ def collatz_eval (i, j) :
         inCacheValue, cache_cycle = isInCache(n)
         #checks to see if value is in cache
         if (inCacheValue == True) :
-<<<<<<< HEAD
-            assert inCacheValue(n) == True
-=======
             assert isInCache(n) == True
->>>>>>> dev-branch
             cycleLength = cache_cycle
             
             if (maxLen < cycleLength) :
