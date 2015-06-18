@@ -23,40 +23,16 @@ def collatz_read (s) :
 # cache_helper_functions
 #-----------------------
 cache = []
-def addToCache(n, c):
-    """
-    n is an int
-    c is cycle length of n
-    adds the value and the corresponding cycle length to the cache
-    """
-    cache.append((n, c))
-
 def isInCache(n):
-    """
-    n is an int
-    returns true if value n is in the cache false otherwise
-    """
-    inCache = False
-    for list in cache:
-        if (list[0] == n ):
-            inCache = True
-            break
-        else:
-            inCache = False
-    return inCache
-
-def getCycleLength(n):
-    """
-    n is an int
-    returns the cycle length of n from the cache 
-    """
     cycle = 0
-    for list in cache:
-        if (list[0] == n ):
-            cycle = list[1]
+    c = 0
+    inCache = False
+    for v, c in cache:
+        if v == n:
+            inCache = True
+            cycle = c
             break
-    return cycle
-
+    return (inCache, c)
 
 # ------------
 # collatz_eval
@@ -81,10 +57,11 @@ def collatz_eval (i, j) :
     while ( i < j + 1) :
         assert i < j + 1
         n = i
+        inCacheValue, cache_cycle = isInCache(n)
         #checks to see if value is in cache
-        if (isInCache(n) == True) :
+        if (inCacheValue == True) :
             assert isInCache(n) == True
-            cycleLength = getCycleLength(n)
+            cycleLength = cache_cycle
             
             if (maxLen < cycleLength) :
                 assert maxLen > 0
@@ -97,13 +74,16 @@ def collatz_eval (i, j) :
             while (n != 1) :
                 assert n > 1
                 if (n % 2 == 0) : #if even
-                    n = n >> 1 #use right shit for faster performance
+                    n = n >> 1    #use right shit for faster performance
                 else :
-                    n = (3 * n) + 1 #if odd
-                cycleLength += 1
+                    n = ((3 * n) + 1) >> 1 #if odd
+                cycleLength += 2
                 assert cycleLength > 0
-            #adds the value and its corresponding cycle length to the cache
-            addToCache(i, cycleLength)
+
+            if (i > 99550):
+                #adds the value and its corresponding cycle length to the cache
+                cache.append((i, cycleLength))
+                
             if (maxLen < cycleLength) :
                 assert maxLen > 0
                 maxLen = cycleLength
